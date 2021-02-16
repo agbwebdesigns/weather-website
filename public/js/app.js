@@ -10,7 +10,7 @@ weatherForm.addEventListener('submit',(e) =>  {  //e is the event that is being 
     console.log(location);
     messageOne.textContent= 'Loading...';
     messageTwo.textContent= '';
-    fetch('http://localhost:3000/weather?address='+location).then((response) =>  {  //get the data from the url, then use it with the response parameter
+    fetch('/weather?address='+location).then((response) =>  {  //get the data from the url, then use it with the response parameter
     console.log('this is the response before the parse... '+response);
     response.json().then((data) =>  {  //get the json data from the response, then render it to the browser
         console.log('this is the response after the parse... '+data.error);

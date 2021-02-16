@@ -10,6 +10,8 @@ const forecast= require('./utils/forecast');
 //console.log(path.join(__dirname,'../public'));  //   <-----the directory path where the file for this code resides including the filename
 
 const app= express();
+const port= process.env.PORT || 3000;
+
 const viewsPath= path.join(__dirname,'../templates/views');  //this points to the folder where the handlebars templates are kept
 const partialsPath= path.join(__dirname,'../templates/partials');  //      "           "           partials
 
@@ -99,8 +101,8 @@ app.get('*',(req,res) =>  {
     });  
 });
 
-app.listen(3000, () =>  {  //first is the port, second is the callback function when success happens
-console.log('Server is running on port 3000!');
+app.listen(port, () =>  {  //first is the port, second is the callback function when success happens
+console.log('Server is running on port '+port+'!');
 });
 
 //app.com
