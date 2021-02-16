@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<HTML>
+<HEAD>
+    <title>{{title}}</title>
+    <link rel= "icon" href= "/images/weather.png">
+    <link rel="stylesheet" href="./css/styles.css">
+</HEAD>
+<BODY>
+    <section class= "main-content">
+        {{>header}}
+        <p>Use this site to get your weather.</p>
+
+        <form>
+            <input placeholder= 'Enter Your Location'>
+            <button>Search</button>
+        </form>
+
+        <P id= "par1"></P>
+        <P id= "par2"></P>
+
+    </section>
+
+    {{>footer}}
+    <script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
+</BODY>
+</HTML>
