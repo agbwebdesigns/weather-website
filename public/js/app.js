@@ -1,5 +1,3 @@
-console.log('Client side Javascript message!');
-
 const weatherForm= document.querySelector('form');  //this saves the form information from the HTML document
 const search= document.querySelector('input');  //this saves the input info from the form element
 const messageOne= document.querySelector('#par1');
