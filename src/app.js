@@ -62,10 +62,11 @@ app.get('/weather',(req,res) =>  {  //request and response
             }
             console.log('Error', error);
             console.log('Data', data);
-            const {description,temperature,feelslike}= data;
+            
+            const {description,windSpeed,windDir,temperature,feelslike}= data;
             console.log("The sky is "+description+" in "+location+".  It is currently "+temperature+" degrees outside, it feels like "+feelslike+" degrees outside.");
             res.send({
-                forecast: 'The sky is '+description+' in '+location+'.  It is currently '+temperature+' degrees outside, it feels like '+feelslike+' degrees outside.',
+                forecast: 'The sky is '+description+' in '+location+'.  It is currently '+temperature+' degrees outside, it feels like '+feelslike+' degrees outside.  The wind speed is '+windSpeed+' mph and is travelling '+windDir+'.',
                 location: location,
                 address: req.query.address
             });

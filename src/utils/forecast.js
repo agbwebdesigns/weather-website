@@ -6,8 +6,9 @@ const forecast= (lat,long,callback) =>  {
     request({url,json:true},(error,response)=>  {
         const {body}= response;
         const {current}= body;
-        const {weather_descriptions,temperature,feelslike}= current;
-        console.log('this is the body!  '+response.body);
+        console.log('this is the current information! '+current);
+        const {weather_descriptions,wind_speed,wind_dir,temperature,feelslike}= current;
+        console.log('this is the weather description!  '+weather_descriptions);
         if (error)  {  //error checking for if the user can connect at all
             callback('There was an error connecting!');
         } else if (response.body.error)  {  //error checking for location information
@@ -15,6 +16,8 @@ const forecast= (lat,long,callback) =>  {
         } else {  //if there are no problems
             callback(undefined,{
                 description: weather_descriptions[0],
+                windSpeed: wind_speed,
+                windDir: wind_dir,
                 temperature: temperature,
                 feelslike: feelslike
             });
